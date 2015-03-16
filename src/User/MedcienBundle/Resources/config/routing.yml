@@ -1,0 +1,3 @@
+user_medcien_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: UserMedcienBundle:Default:index }

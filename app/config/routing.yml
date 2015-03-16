@@ -1,0 +1,15 @@
+user_medcien:
+    resource: "@UserMedcienBundle/Resources/config/routing.yml"
+    prefix:   /medcien
+
+user_patient:
+    resource: "@UserPatientBundle/Resources/config/routing.yml"
+    prefix:   /patient
+
+user_admin:
+    resource: "@UserAdminBundle/Resources/config/routing.yml"
+    prefix:   /user/admin
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

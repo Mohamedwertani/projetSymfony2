@@ -1,0 +1,9 @@
+user_admin_homepage:
+    path:     /
+    defaults: { _controller: UserAdminBundle:Default:index }
+user_admin_homepage_login:
+    path:     /login
+    defaults: { _controller: UserAdminBundle:Login:login }
+user_admin_homepage_signup:
+    path:     /signup
+    defaults: { _controller: UserAdminBundle:Registration:signup }
