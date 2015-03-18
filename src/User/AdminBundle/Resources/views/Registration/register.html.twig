@@ -1,5 +1,22 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
+{% block connect_lien %}
+    <li class="">						
+        <a href="{{ path('user_admin_homepage_login') }}" class="">
+            Already have an account? Login now
+        </a>
+     </li>
+{% endblock %}
 
 {% block fos_user_content %}
-{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+      <div class="account-container register">
+
+        <div class="content clearfix">
+
+        
+
+ {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+
+        </div>
+      </div>
+
 {% endblock fos_user_content %}

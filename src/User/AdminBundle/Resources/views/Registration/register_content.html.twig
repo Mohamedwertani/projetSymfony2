@@ -1,8 +1,28 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    <h1>Signup for Free Account</h1>			
+    <p>Create your free account:</p>
+    <div class="login-fields">
+        <div class="field">
+            {{ form_label(form.username, "Email Address:", {'label_attr': {'class': ' '}}) }}
+            {{ form_widget(form.username, { 'attr': {'class': 'login', 'placeholder' : 'username'} }) }}
+        </div>
+        <div class="field">
+            {{ form_label(form.email, "Email Address:", {'label_attr': {'class': ' '}}) }}
+            {{ form_widget(form.email, { 'attr': {'class': 'login', 'placeholder' : 'email'} }) }}
+        </div>
+        <div class="field">
+            {{ form_label(form.plainPassword, "Password :", {'label_attr': {'class': ' '}}) }}
+            {{ form_widget(form.plainPassword, { 'attr': {'class': 'login', 'placeholder' : 'Password'} }) }}
+        </div> 
     </div>
+
+    <div class="login-actions">
+        <span class="login-checkbox">
+            <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+            <label class="choice" for="Field">Agree with the Terms & Conditions.</label>
+        </span>
+        <button class="button btn btn-primary btn-large" type="submit"  value="{{ 'registration.submit'|trans }}" >Register</button>
+    </div>  
 </form>
