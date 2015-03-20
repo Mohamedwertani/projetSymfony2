@@ -69,15 +69,43 @@ class __TwigTemplate_e5a19bb89670030765a2ec19a8939c076af27d9af1ea3ede51a5abfd4e0
                     </a>
 
                     <a class=\"brand\" href=\"index.html\">
-                        Projet Web Symfony 2\t\t\t\t
+                        Projet Web Symfony 2\t
+                        ";
+        // line 38
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 39
+            echo "                            ";
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logged_in_as", array("%username%" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())), "FOSUserBundle"), "html", null, true);
+            echo " |
+                            <a href=\"";
+            // line 40
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\">
+                                ";
+            // line 41
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
+            echo "
+                            </a>
+                        ";
+        } else {
+            // line 44
+            echo "                            <a href=\"";
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.login", array(), "FOSUserBundle"), "html", null, true);
+            echo "</a>
+                        ";
+        }
+        // line 45
+        echo "\t\t\t
                     </a>\t\t
 
                     <div class=\"nav-collapse\">
                         <ul class=\"nav pull-right\">
                             ";
-        // line 42
+        // line 50
         $this->displayBlock('connect_lien', $context, $blocks);
-        // line 45
+        // line 53
         echo "                            <li class=\"\">\t\t\t\t\t\t
                                 <a href=\"index.html\" class=\"\">
                                     <i class=\"icon-chevron-left\"></i>
@@ -96,22 +124,22 @@ class __TwigTemplate_e5a19bb89670030765a2ec19a8939c076af27d9af1ea3ede51a5abfd4e0
         </div> <!-- /navbar -->
 
         ";
-        // line 62
+        // line 70
         $this->displayBlock('main', $context, $blocks);
-        // line 65
+        // line 73
         echo "
 
         <script src=\"";
-        // line 67
+        // line 75
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery-1.7.2.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 68
+        // line 76
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 70
+        // line 78
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/signin.js"), "html", null, true);
         echo "\"></script>
 
@@ -123,20 +151,20 @@ class __TwigTemplate_e5a19bb89670030765a2ec19a8939c076af27d9af1ea3ede51a5abfd4e0
 ";
     }
 
-    // line 42
+    // line 50
     public function block_connect_lien($context, array $blocks = array())
     {
-        // line 43
+        // line 51
         echo "
                             ";
     }
 
-    // line 62
+    // line 70
     public function block_main($context, array $blocks = array())
     {
-        // line 63
-        echo "            
-            ";
+        // line 71
+        echo "
+        ";
     }
 
     public function getTemplateName()
@@ -151,6 +179,6 @@ class __TwigTemplate_e5a19bb89670030765a2ec19a8939c076af27d9af1ea3ede51a5abfd4e0
 
     public function getDebugInfo()
     {
-        return array (  138 => 63,  135 => 62,  130 => 43,  127 => 42,  115 => 70,  110 => 68,  106 => 67,  102 => 65,  100 => 62,  81 => 45,  79 => 42,  52 => 18,  48 => 17,  42 => 14,  37 => 12,  33 => 11,  21 => 1,);
+        return array (  166 => 71,  163 => 70,  158 => 51,  155 => 50,  143 => 78,  138 => 76,  134 => 75,  130 => 73,  128 => 70,  109 => 53,  107 => 50,  100 => 45,  92 => 44,  86 => 41,  82 => 40,  77 => 39,  75 => 38,  52 => 18,  48 => 17,  42 => 14,  37 => 12,  33 => 11,  21 => 1,);
     }
 }

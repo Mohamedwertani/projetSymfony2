@@ -34,7 +34,15 @@
                     </a>
 
                     <a class="brand" href="index.html">
-                        Projet Web Symfony 2				
+                        Projet Web Symfony 2	
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        {% endif %}			
                     </a>		
 
                     <div class="nav-collapse">
@@ -60,8 +68,8 @@
         </div> <!-- /navbar -->
 
         {% block main %}
-            
-            {% endblock %}
+
+        {% endblock %}
 
 
         <script src="{{ asset('assets/js/jquery-1.7.2.min.js')}}"></script>

@@ -1,13 +1,17 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
-{% block connect_lien %}
-    <li class="">						
-        <a href="{{ path('user_admin_homepage_signup') }}" class="">
-            Don't have an account?
-        </a>
-    </li>
-{% endblock %}  
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+{% else %}
+    {% block connect_lien %}
+        <li class="">						
+            <a href="{{ path('user_admin_homepage_signup') }}" class="">
+                Don't have an account? 
+            </a>
+        </li>
+    {% endblock %} 
+{% endif %}
+
 {% block fos_user_content %}
 
     <div class="account-container">
@@ -31,11 +35,11 @@
                     </div> 
                 </div>
                 <div class="login-actions">
-                   <span class="login-checkbox">
-                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="field login-checkbox" />
-                    <label for="remember_me"  class="choice">{{ 'security.login.remember_me'|trans }}</label>
-  </span>
-                   <button class="button btn btn-success btn-large" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"  >  Sign In</button>
+                    <span class="login-checkbox">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="field login-checkbox" />
+                        <label for="remember_me"  class="choice">{{ 'security.login.remember_me'|trans }}</label>
+                    </span>
+                    <button class="button btn btn-success btn-large" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"  >  Sign In</button>
                 </div>
 
 

@@ -12,9 +12,9 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheet' => array($this, 'block_stylesheet'),
-            'navbar' => array($this, 'block_navbar'),
+            'connect_lien' => array($this, 'block_connect_lien'),
             'menu' => array($this, 'block_menu'),
-            'body' => array($this, 'block_body'),
+            'main' => array($this, 'block_main'),
             'javascripts' => array($this, 'block_javascripts'),
         );
     }
@@ -72,16 +72,79 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
         <div class=\"navbar navbar-fixed-top\">
             <div class=\"navbar-inner\">
                 <div class=\"container\"> 
-                    ";
-        // line 29
-        $this->displayBlock('navbar', $context, $blocks);
-        // line 55
-        echo "                </div>
+                     
+                        <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">
+                            <span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span> </a><a class=\"brand\" href=\"index.html\">Bootstrap Admin Template </a>
+                        <div class=\"nav-collapse\">
+                            <ul class=\"nav pull-right\"> 
+                                
+                                ";
+        // line 35
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 36
+            echo "             ";
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logged_in_as", array("%username%" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())), "FOSUserBundle"), "html", null, true);
+            echo " |
+            <a href=\"";
+            // line 37
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\">
+                ";
+            // line 38
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
+            echo "
+            </a>
+             <li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i
+                                            class=\"icon-cog\"></i> Account <b class=\"caret\"></b></a>
+                                    <ul class=\"dropdown-menu\">
+                                        <li><a href=\"javascript:;\">Settings</a></li>
+                                        <li><a href=\"javascript:;\">Help</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i
+                                            class=\"icon-user\"></i> EGrappler.com <b class=\"caret\"></b></a>
+                                    <ul class=\"dropdown-menu\">
+                                        <li><a href=\"javascript:;\">Profile</a></li>
+                                        <li><a href=\"javascript:;\">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class=\"navbar-search pull-right\">
+                                <input type=\"text\" class=\"search-query\" placeholder=\"Search\">
+                            </form>
+            
+        ";
+        } else {
+            // line 61
+            echo "                ";
+            $this->displayBlock('connect_lien', $context, $blocks);
+            // line 63
+            echo "
+             <a href=\"";
+            // line 64
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.login", array(), "FOSUserBundle"), "html", null, true);
+            echo "</a>
+        ";
+        }
+        // line 66
+        echo "                                
+                               
+                        </div>
+                        <!--/.nav-collapse --> 
+                   
+                </div>
                 <!-- /container --> 
             </div>
             <!-- /navbar-inner --> 
         </div>
-        <!-- /navbar -->
+         ";
+        // line 76
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 77
+            echo "       <!-- /navbar -->
         <div class=\"subnavbar\">
             <div class=\"subnavbar-inner\">
                 <div class=\"container\">
@@ -102,24 +165,27 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
                             </ul>
                         </li>
                         ";
-        // line 80
-        $this->displayBlock('menu', $context, $blocks);
-        // line 82
-        echo "                    </ul>
+            // line 97
+            $this->displayBlock('menu', $context, $blocks);
+            // line 99
+            echo "                    </ul>
                 </div>
                 <!-- /container --> 
             </div>
             <!-- /subnavbar-inner --> 
         </div>
         <!-- /subnavbar -->
-        <div class=\"main\">
+        ";
+        }
+        // line 107
+        echo "        <div class=\"main\">
             <div class=\"main-inner\">
                 <div class=\"container\">
                     <div class=\"row\">
                         ";
-        // line 93
-        $this->displayBlock('body', $context, $blocks);
-        // line 329
+        // line 111
+        $this->displayBlock('main', $context, $blocks);
+        // line 347
         echo "                    </div>
                     <!-- /row --> 
                 </div>
@@ -201,28 +267,28 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
         ================================================== --> 
         <!-- Placed at the end of the document so the pages load faster --> 
         <script src=\"";
-        // line 409
+        // line 427
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery-1.7.2.min.js"), "html", null, true);
         echo "\"></script> 
         <script src=\"";
-        // line 410
+        // line 428
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/excanvas.min.js"), "html", null, true);
         echo "\"></script> 
         <script src=\"";
-        // line 411
+        // line 429
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/chart.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script> 
         <script src=\"";
-        // line 412
+        // line 430
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
         <script language=\"javascript\" type=\"text/javascript\" src=\"";
-        // line 413
+        // line 431
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/full-calendar/fullcalendar.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 415
+        // line 433
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/base.js"), "html", null, true);
         echo "\"></script> 
         <script>
@@ -347,9 +413,9 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
             });
         </script><!-- /Calendar -->
     ";
-        // line 537
+        // line 555
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 538
+        // line 556
         echo "
 </body>
 </html>
@@ -370,48 +436,24 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
         echo " ";
     }
 
-    // line 29
-    public function block_navbar($context, array $blocks = array())
+    // line 61
+    public function block_connect_lien($context, array $blocks = array())
     {
-        // line 30
-        echo "                        <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">
-                            <span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span> </a><a class=\"brand\" href=\"index.html\">Bootstrap Admin Template </a>
-                        <div class=\"nav-collapse\">
-                            <ul class=\"nav pull-right\">
-                                <li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i
-                                            class=\"icon-cog\"></i> Account <b class=\"caret\"></b></a>
-                                    <ul class=\"dropdown-menu\">
-                                        <li><a href=\"javascript:;\">Settings</a></li>
-                                        <li><a href=\"javascript:;\">Help</a></li>
-                                    </ul>
-                                </li>
-                                <li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><i
-                                            class=\"icon-user\"></i> EGrappler.com <b class=\"caret\"></b></a>
-                                    <ul class=\"dropdown-menu\">
-                                        <li><a href=\"javascript:;\">Profile</a></li>
-                                        <li><a href=\"javascript:;\">Logout</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <form class=\"navbar-search pull-right\">
-                                <input type=\"text\" class=\"search-query\" placeholder=\"Search\">
-                            </form>
-                        </div>
-                        <!--/.nav-collapse --> 
-                    ";
+        // line 62
+        echo "                    ";
     }
 
-    // line 80
+    // line 97
     public function block_menu($context, array $blocks = array())
     {
-        // line 81
+        // line 98
         echo "                        ";
     }
 
-    // line 93
-    public function block_body($context, array $blocks = array())
+    // line 111
+    public function block_main($context, array $blocks = array())
     {
-        // line 94
+        // line 112
         echo "                            <div class=\"span6\">
                                 <div class=\"widget widget-nopad\">
                                     <div class=\"widget-header\"> <i class=\"icon-list-alt\"></i>
@@ -649,7 +691,7 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
                         ";
     }
 
-    // line 537
+    // line 555
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -666,6 +708,6 @@ class __TwigTemplate_89a05f01525dc1f6e78e13c06782c283694783d515f3f475b9df7b4df9c
 
     public function getDebugInfo()
     {
-        return array (  653 => 537,  415 => 94,  412 => 93,  408 => 81,  405 => 80,  377 => 30,  374 => 29,  368 => 19,  363 => 6,  360 => 5,  353 => 538,  351 => 537,  226 => 415,  221 => 413,  217 => 412,  213 => 411,  209 => 410,  205 => 409,  123 => 329,  121 => 93,  108 => 82,  106 => 80,  79 => 55,  77 => 29,  66 => 20,  64 => 19,  60 => 18,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 8,  31 => 5,  25 => 1,);
+        return array (  695 => 555,  457 => 112,  454 => 111,  450 => 98,  447 => 97,  443 => 62,  440 => 61,  434 => 19,  429 => 6,  426 => 5,  419 => 556,  417 => 555,  292 => 433,  287 => 431,  283 => 430,  279 => 429,  275 => 428,  271 => 427,  189 => 347,  187 => 111,  181 => 107,  171 => 99,  169 => 97,  147 => 77,  145 => 76,  133 => 66,  126 => 64,  123 => 63,  120 => 61,  94 => 38,  90 => 37,  85 => 36,  83 => 35,  66 => 20,  64 => 19,  60 => 18,  55 => 16,  51 => 15,  47 => 14,  41 => 11,  37 => 10,  33 => 8,  31 => 5,  25 => 1,);
     }
 }

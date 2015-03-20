@@ -35,26 +35,54 @@ class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda02
         // line 9
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "username")));
         echo "
+           ";
+        // line 10
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'errors');
+        echo "
+
         </div>
         <div class=\"field\">
             ";
-        // line 12
+        // line 14
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'label', array("label_attr" => array("class" => " "), "label" => "Email Address:"));
         echo "
             ";
-        // line 13
+        // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "email")));
+        echo "
+             ";
+        // line 16
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'errors');
         echo "
         </div>
         <div class=\"field\">
             ";
-        // line 16
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), 'label', array("label_attr" => array("class" => " "), "label" => "Password :"));
+        // line 19
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'label', array("label_attr" => array("class" => " "), "label" => "Password :"));
         echo "
             ";
-        // line 17
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "Password")));
+        // line 20
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "Password")));
         echo "
+            ";
+        // line 21
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'errors');
+        echo "
+        </div> 
+        <div class=\"field\">
+            ";
+        // line 24
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'label', array("label_attr" => array("class" => " "), "label" => "Password :"));
+        echo "
+            ";
+        // line 25
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "Confirm Password")));
+        echo "
+                        ";
+        // line 26
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'errors');
+        echo "
+
         </div> 
     </div>
 
@@ -64,7 +92,7 @@ class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda02
             <label class=\"choice\" for=\"Field\">Agree with the Terms & Conditions.</label>
         </span>
         <button class=\"button btn btn-primary btn-large\" type=\"submit\"  value=\"";
-        // line 26
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" >Register</button>
     </div>  
@@ -84,6 +112,6 @@ class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda02
 
     public function getDebugInfo()
     {
-        return array (  68 => 26,  56 => 17,  52 => 16,  46 => 13,  42 => 12,  36 => 9,  32 => 8,  22 => 3,  19 => 2,);
+        return array (  96 => 36,  83 => 26,  79 => 25,  75 => 24,  69 => 21,  65 => 20,  61 => 19,  55 => 16,  51 => 15,  47 => 14,  40 => 10,  36 => 9,  32 => 8,  22 => 3,  19 => 2,);
     }
 }

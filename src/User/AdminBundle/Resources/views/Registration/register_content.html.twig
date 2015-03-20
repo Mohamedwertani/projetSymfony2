@@ -7,14 +7,24 @@
         <div class="field">
             {{ form_label(form.username, "Email Address:", {'label_attr': {'class': ' '}}) }}
             {{ form_widget(form.username, { 'attr': {'class': 'login', 'placeholder' : 'username'} }) }}
+           {{ form_errors(form.username) }}
+
         </div>
         <div class="field">
             {{ form_label(form.email, "Email Address:", {'label_attr': {'class': ' '}}) }}
             {{ form_widget(form.email, { 'attr': {'class': 'login', 'placeholder' : 'email'} }) }}
+             {{ form_errors(form.email) }}
         </div>
         <div class="field">
-            {{ form_label(form.plainPassword, "Password :", {'label_attr': {'class': ' '}}) }}
-            {{ form_widget(form.plainPassword, { 'attr': {'class': 'login', 'placeholder' : 'Password'} }) }}
+            {{ form_label(form.plainPassword.first, "Password :", {'label_attr': {'class': ' '}}) }}
+            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'login', 'placeholder' : 'Password'} }) }}
+            {{ form_errors(form.plainPassword.first) }}
+        </div> 
+        <div class="field">
+            {{ form_label(form.plainPassword.second, "Password :", {'label_attr': {'class': ' '}}) }}
+            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'login', 'placeholder' : 'Confirm Password'} }) }}
+                        {{ form_errors(form.plainPassword.second) }}
+
         </div> 
     </div>
 
