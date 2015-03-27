@@ -1,4 +1,4 @@
-{% extends '::deconnectTemplet.html.twig' %}
+{% extends '::layout.html.twig' %}
 {% block connect_lien %}
     <li class="">						
         <a href="{{ path('user_admin_homepage_signup') }}" class="">
@@ -7,6 +7,7 @@
     </li>
 {% endblock %}  
 {% block main %}
+{% block fos_user_content %}
 
     <div class="account-container">
 
@@ -53,4 +54,6 @@
     <div class="login-extra">
         <a href="{{ path('user_admin_homepage_login') }}">Reset Password</a>
     </div> <!-- /login-extra -->
+    {% endblock fos_user_content %}
+
 {% endblock %}

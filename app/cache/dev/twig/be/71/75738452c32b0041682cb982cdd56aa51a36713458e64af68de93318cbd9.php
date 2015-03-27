@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Registration:confirmed.html.twig */
+/* UserAdminBundle:Registration:confirmed.html.twig */
 class __TwigTemplate_be7175738452c32b0041682cb982cdd56aa51a36713458e64af68de93318cbd9 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -36,17 +36,21 @@ class __TwigTemplate_be7175738452c32b0041682cb982cdd56aa51a36713458e64af68de9331
     public function block_fos_user_content($context, array $blocks = array())
     {
         // line 6
-        echo "    <p>";
+        echo "    <div class=\"account-container\">
+
+        <div class=\"content clearfix\">
+            <p>";
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.confirmed", array("%username%" => $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "username", array())), "FOSUserBundle"), "html", null, true);
         echo "</p>
-    ";
-        // line 7
+            ";
+        // line 10
         if ( !twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()))) {
-            // line 8
-            echo "        ";
+            // line 11
+            echo "                ";
             $context["targetUrl"] = $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => (("_security." . $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "security", array()), "token", array()), "providerKey", array())) . ".target_path")), "method");
-            // line 9
-            echo "        ";
+            // line 12
+            echo "                ";
             if ( !twig_test_empty((isset($context["targetUrl"]) ? $context["targetUrl"] : $this->getContext($context, "targetUrl")))) {
                 echo "<p><a href=\"";
                 echo twig_escape_filter($this->env, (isset($context["targetUrl"]) ? $context["targetUrl"] : $this->getContext($context, "targetUrl")), "html", null, true);
@@ -54,14 +58,18 @@ class __TwigTemplate_be7175738452c32b0041682cb982cdd56aa51a36713458e64af68de9331
                 echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.back", array(), "FOSUserBundle"), "html", null, true);
                 echo "</a></p>";
             }
-            // line 10
-            echo "    ";
+            // line 13
+            echo "                ";
         }
+        // line 14
+        echo "        </div>
+    </div> 
+";
     }
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Registration:confirmed.html.twig";
+        return "UserAdminBundle:Registration:confirmed.html.twig";
     }
 
     public function isTraitable()
@@ -71,6 +79,6 @@ class __TwigTemplate_be7175738452c32b0041682cb982cdd56aa51a36713458e64af68de9331
 
     public function getDebugInfo()
     {
-        return array (  58 => 10,  49 => 9,  46 => 8,  44 => 7,  39 => 6,  36 => 5,  11 => 1,);
+        return array (  65 => 14,  62 => 13,  53 => 12,  50 => 11,  48 => 10,  44 => 9,  39 => 6,  36 => 5,  11 => 1,);
     }
 }

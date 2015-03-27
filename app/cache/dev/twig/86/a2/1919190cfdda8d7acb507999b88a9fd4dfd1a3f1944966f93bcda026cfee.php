@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Registration:register_content.html.twig */
+/* UserAdminBundle:Registration:register_content.html.twig */
 class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda026cfee extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -35,7 +35,7 @@ class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda02
         // line 9
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "username")));
         echo "
-           ";
+            ";
         // line 10
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'errors');
         echo "
@@ -50,7 +50,7 @@ class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda02
         // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "email")));
         echo "
-             ";
+            ";
         // line 16
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'errors');
         echo "
@@ -78,7 +78,7 @@ class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda02
         // line 25
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'widget', array("attr" => array("class" => "login", "placeholder" => "Confirm Password")));
         echo "
-                        ";
+            ";
         // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'errors');
         echo "
@@ -102,7 +102,7 @@ class __TwigTemplate_86a21919190cfdda8d7acb507999b88a9fd4dfd1a3f1944966f93bcda02
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Registration:register_content.html.twig";
+        return "UserAdminBundle:Registration:register_content.html.twig";
     }
 
     public function isTraitable()

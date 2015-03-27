@@ -30,6 +30,11 @@ class __TwigTemplate_9a07a437f8c1d04a35be0311772984253a4dd1150211c6bc71239e9fb87
         echo ": ";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "email", array()), "html", null, true);
         echo "</p>
+    <div class=\"field\"> <a class=\"button btn btn-primary btn-large\" href=\"";
+        // line 6
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_edit");
+        echo "\"> Modifier</a> </div> 
+
 </div>
 ";
     }
@@ -46,6 +51,6 @@ class __TwigTemplate_9a07a437f8c1d04a35be0311772984253a4dd1150211c6bc71239e9fb87
 
     public function getDebugInfo()
     {
-        return array (  29 => 5,  23 => 4,  19 => 2,);
+        return array (  35 => 6,  29 => 5,  23 => 4,  19 => 2,);
     }
 }

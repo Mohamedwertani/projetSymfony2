@@ -44,7 +44,7 @@ class __TwigTemplate_c2f3ff76cc99dfcca274f09198a2da75d1831fddc0f180c143f95f3a092
         echo "\" class=\"\">
             Already have an account? Login now
         </a>
-     </li>
+    </li>
 ";
     }
 

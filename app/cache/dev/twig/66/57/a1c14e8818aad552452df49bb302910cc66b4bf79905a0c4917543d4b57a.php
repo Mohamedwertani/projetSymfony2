@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Profile:edit_content.html.twig */
+/* UserAdminBundle:Profile:edit_content.html.twig */
 class __TwigTemplate_6657a1c14e8818aad552452df49bb302910cc66b4bf79905a0c4917543d4b57a extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -39,7 +39,7 @@ class __TwigTemplate_6657a1c14e8818aad552452df49bb302910cc66b4bf79905a0c4917543d
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Profile:edit_content.html.twig";
+        return "UserAdminBundle:Profile:edit_content.html.twig";
     }
 
     public function isTraitable()

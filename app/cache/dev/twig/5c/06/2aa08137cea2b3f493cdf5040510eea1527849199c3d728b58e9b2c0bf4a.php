@@ -9,7 +9,7 @@ class __TwigTemplate_5c062aa08137cea2b3f493cdf5040510eea1527849199c3d728b58e9b2c
 
         // line 1
         try {
-            $this->parent = $this->env->loadTemplate("::deconnectTemplet.html.twig");
+            $this->parent = $this->env->loadTemplate("::layout.html.twig");
         } catch (Twig_Error_Loader $e) {
             $e->setTemplateFile($this->getTemplateName());
             $e->setTemplateLine(1);
@@ -20,12 +20,13 @@ class __TwigTemplate_5c062aa08137cea2b3f493cdf5040510eea1527849199c3d728b58e9b2c
         $this->blocks = array(
             'connect_lien' => array($this, 'block_connect_lien'),
             'main' => array($this, 'block_main'),
+            'fos_user_content' => array($this, 'block_fos_user_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::deconnectTemplet.html.twig";
+        return "::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -52,64 +53,26 @@ class __TwigTemplate_5c062aa08137cea2b3f493cdf5040510eea1527849199c3d728b58e9b2c
     public function block_main($context, array $blocks = array())
     {
         // line 10
+        $this->displayBlock('fos_user_content', $context, $blocks);
+        // line 58
+        echo "
+";
+    }
+
+    // line 10
+    public function block_fos_user_content($context, array $blocks = array())
+    {
+        // line 11
         echo "
     <div class=\"account-container\">
 
         <div class=\"content clearfix\">
-            ";
-        // line 14
-        if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 15
-            echo "                <div>";
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
-            echo "</div>
-            ";
-        }
-        // line 17
-        echo "
-            <form action=\"";
-        // line 18
-        echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
-        echo "\" method=\"post\">
-                <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 19
-        echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
-        echo "\" />
 
-                <label for=\"username\">";
-        // line 21
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.username"), "html", null, true);
-        echo "</label>
-                <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 22
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" required=\"required\" />
-
-                <label for=\"password\">";
-        // line 24
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password"), "html", null, true);
-        echo "</label>
-                <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
-
-                <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-                <label for=\"remember_me\">";
-        // line 28
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me"), "html", null, true);
-        echo "</label>
-
-                <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 30
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit"), "html", null, true);
-        echo "\" />
-            </form>
             <form action=\"#\" method=\"post\">
 
                 <h1>Member Login</h1>\t\t
 
                 <div class=\"login-fields\">
-
-
-
 
                     <p>Please provide your details</p>
 
@@ -135,9 +98,7 @@ class __TwigTemplate_5c062aa08137cea2b3f493cdf5040510eea1527849199c3d728b58e9b2c
                     <button class=\"button btn btn-success btn-large\">Sign In</button>
 
                 </div> <!-- .actions -->
-
-
-
+ 
             </form>
         </div> <!-- /content -->
 
@@ -147,11 +108,11 @@ class __TwigTemplate_5c062aa08137cea2b3f493cdf5040510eea1527849199c3d728b58e9b2c
 
     <div class=\"login-extra\">
         <a href=\"";
-        // line 76
+        // line 55
         echo $this->env->getExtension('routing')->getPath("user_admin_homepage_login");
         echo "\">Reset Password</a>
     </div> <!-- /login-extra -->
-";
+    ";
     }
 
     public function getTemplateName()
@@ -166,6 +127,6 @@ class __TwigTemplate_5c062aa08137cea2b3f493cdf5040510eea1527849199c3d728b58e9b2c
 
     public function getDebugInfo()
     {
-        return array (  151 => 76,  102 => 30,  97 => 28,  90 => 24,  85 => 22,  81 => 21,  76 => 19,  72 => 18,  69 => 17,  63 => 15,  61 => 14,  55 => 10,  52 => 9,  43 => 4,  40 => 3,  37 => 2,  11 => 1,);
+        return array (  112 => 55,  66 => 11,  63 => 10,  58 => 58,  56 => 10,  53 => 9,  44 => 4,  41 => 3,  38 => 2,  11 => 1,);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Profile:edit.html.twig */
+/* UserAdminBundle:Profile:edit.html.twig */
 class __TwigTemplate_4a1fbb9bf19a447a2d5936a62054872833b4bc0f7b7f8e7b32053e0ede0ad791 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -18,6 +18,7 @@ class __TwigTemplate_4a1fbb9bf19a447a2d5936a62054872833b4bc0f7b7f8e7b32053e0ede0
         }
 
         $this->blocks = array(
+            'content' => array($this, 'block_content'),
             'fos_user_content' => array($this, 'block_fos_user_content'),
         );
     }
@@ -32,25 +33,29 @@ class __TwigTemplate_4a1fbb9bf19a447a2d5936a62054872833b4bc0f7b7f8e7b32053e0ede0
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 2
+    public function block_content($context, array $blocks = array())
+    {
+        // line 3
+        echo "    ";
+        $this->displayBlock('fos_user_content', $context, $blocks);
+    }
+
     public function block_fos_user_content($context, array $blocks = array())
     {
         // line 4
-        echo "    <div class=\"account-container\">
-
-        <div class=\"content clearfix\">
-            ";
-        // line 7
+        echo "
+        ";
+        // line 5
         $this->env->loadTemplate("FOSUserBundle:Profile:edit_content.html.twig")->display($context);
-        // line 8
-        echo "        </div>
-    </div>
-";
+        // line 6
+        echo "
+    ";
     }
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Profile:edit.html.twig";
+        return "UserAdminBundle:Profile:edit.html.twig";
     }
 
     public function isTraitable()
@@ -60,6 +65,6 @@ class __TwigTemplate_4a1fbb9bf19a447a2d5936a62054872833b4bc0f7b7f8e7b32053e0ede0
 
     public function getDebugInfo()
     {
-        return array (  46 => 8,  44 => 7,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  52 => 6,  50 => 5,  47 => 4,  40 => 3,  37 => 2,  11 => 1,);
     }
 }

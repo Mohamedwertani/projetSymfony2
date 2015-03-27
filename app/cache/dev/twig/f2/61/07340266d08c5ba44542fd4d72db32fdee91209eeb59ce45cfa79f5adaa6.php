@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Registration:register.html.twig */
+/* UserAdminBundle:Registration:register.html.twig */
 class __TwigTemplate_f26107340266d08c5ba44542fd4d72db32fdee91209eeb59ce45cfa79f5adaa6 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -52,26 +52,18 @@ class __TwigTemplate_f26107340266d08c5ba44542fd4d72db32fdee91209eeb59ce45cfa79f5
     public function block_fos_user_content($context, array $blocks = array())
     {
         // line 11
-        echo "      <div class=\"account-container register\">
-
-        <div class=\"content clearfix\">
-
-        
-
+        echo "    
  ";
-        // line 17
+        // line 12
         $this->env->loadTemplate("FOSUserBundle:Registration:register_content.html.twig")->display($context);
-        // line 18
+        // line 13
         echo "
-        </div>
-      </div>
-
 ";
     }
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Registration:register.html.twig";
+        return "UserAdminBundle:Registration:register.html.twig";
     }
 
     public function isTraitable()
@@ -81,6 +73,6 @@ class __TwigTemplate_f26107340266d08c5ba44542fd4d72db32fdee91209eeb59ce45cfa79f5
 
     public function getDebugInfo()
     {
-        return array (  65 => 18,  63 => 17,  55 => 11,  52 => 10,  43 => 4,  40 => 3,  37 => 2,  11 => 1,);
+        return array (  60 => 13,  58 => 12,  55 => 11,  52 => 10,  43 => 4,  40 => 3,  37 => 2,  11 => 1,);
     }
 }

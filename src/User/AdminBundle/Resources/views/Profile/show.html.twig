@@ -1,11 +1,17 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
+{% block content %}
+    {#{{ parent() }}#}
 
-{% block fos_user_content %}
-    <div class="account-container">
+    <div class="span12">
 
-        <div class="content clearfix"> 
-     {% include "FOSUserBundle:Profile:show_content.html.twig" %}
-       </div>
+        <div class="widget widget-content">
+
+            {% block fos_user_content %}
+
+                {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+
+            {% endblock fos_user_content %}
+        </div> 
 
     </div>
-{% endblock fos_user_content %}
+{% endblock content %}
